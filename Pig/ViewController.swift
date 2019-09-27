@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerTurnLabel: UILabel!
     @IBOutlet var dieImage: UIImageView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,9 +26,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func roll(_ sender: Any) {
-        let randomInt = Int.random(in: 0..<6)
-        dieImage.image=UIImage(named: "face\(randomInt)")
-        
+        let randomInt = Int.random(in: 1..<6)
+        print(randomInt)
+        if(randomInt>0){
+            dieImage.image=UIImage(named: "face\(randomInt)")
+        }
+        else{
+            print("-1")
+        }
         
     }
 }
