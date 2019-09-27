@@ -76,11 +76,16 @@
                                     <action selector="endTurn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8dj-jo-Bep"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="face1" translatesAutoresizingMaskIntoConstraints="NO" id="H4W-M4-mBe">
+                                <rect key="frame" x="81" y="346" width="240" height="226"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="dieImage" destination="H4W-M4-mBe" id="LJS-cN-aHF"/>
                         <outlet property="playerTurnLabel" destination="WVc-Cs-4lE" id="FSf-Za-3Wk"/>
                         <outlet property="score1" destination="2tB-lI-0TC" id="jR5-Yv-JPo"/>
                         <outlet property="score2" destination="nB8-37-CNf" id="Vvc-BN-FYh"/>
@@ -89,6 +94,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="134.5108695652174"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="face1" width="178" height="172"/>
+    </resources>
 </document>
