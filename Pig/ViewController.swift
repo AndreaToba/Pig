@@ -19,11 +19,13 @@ class ViewController: UIViewController {
     var player1Score: Int = 0
     var player2Score: Int = 0
     var playerTurnScore: Int = 0
+    var lostToOne: Bool=false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+         dieImage.image=UIImage(named: "start")
     }
 
     @IBAction func endTurn(_ sender: Any) {
@@ -37,27 +39,47 @@ class ViewController: UIViewController {
         if(randomInt>0){
             dieImage.image=UIImage(named: "face\(randomInt)")
         }
-        else{
-            print("-1")
-        }
         
         if (randomInt == 1){
             playerTurnScore = 0
+            lostToOne=true;
             turnToTotal()
+            
         }
         else{
             playerTurnScore += randomInt
+            lostToOne=false;
         }
+        turnScore.text="Score: \(playerTurnScore)"
+        
      }
     
     func turnToTotal(){
         if (player1Turn){
             player1Score += playerTurnScore
+           
+            playerTurnLabel.text="Player 2's Turn"
         }
         else{
             player2Score += playerTurnScore
+            playerTurnLabel.text="Player 1's Turn"
         }
+        
+        if(lostToOne){
+            dieImage.image=UIImage(named: "face1")}
+        else{
+            dieImage.image=UIImage(named: "start")
+        }
+        
+         playerTurnScore = 0
+        turnScore.text="Score: \(playerTurnScore)"
         player1Turn = !player1Turn
+       
+        
+        
+         score1.text=("Player 1: \(player1Score)")
+        score2.text=("Player 2: \(player2Score)")
+        
     }
     
 }
