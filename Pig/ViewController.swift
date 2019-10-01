@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var player2Score: Int = 0
     var playerTurnScore: Int = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,8 +31,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func roll(_ sender: Any) {
-        let randomInt = Int.random(in: 0..<6)
-        dieImage.image=UIImage(named: "face\(randomInt)")
+     //   UIImage.rotate(180)
+        let randomInt = Int.random(in: 1..<6)
+        print(randomInt)
+        if(randomInt>0){
+            dieImage.image=UIImage(named: "face\(randomInt)")
+        }
+        else{
+            print("-1")
+        }
         
         if (randomInt == 1){
             playerTurnScore = 0
@@ -53,4 +61,28 @@ class ViewController: UIViewController {
     }
     
 }
+
+
+/*extension UIImage {
+    func rotate(radians: CGFloat) -> UIImage {
+        let rotatedSize = CGRect(origin: .zero, size: size)
+            .applying(CGAffineTransform(rotationAngle: CGFloat(radians)))
+            .integral.size
+        UIGraphicsBeginImageContext(rotatedSize)
+        if let context = UIGraphicsGetCurrentContext() {
+            let origin = CGPoint(x: rotatedSize.width / 2.0,
+                                 y: rotatedSize.height / 2.0)
+            context.translateBy(x: origin.x, y: origin.y)
+            context.rotate(by: radians)
+            draw(in: CGRect(x: -origin.y, y: -origin.x,
+                            width: size.width, height: size.height))
+            let rotatedImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            return rotatedImage ?? self
+        }
+        
+        return self
+    }
+ }*/
 
