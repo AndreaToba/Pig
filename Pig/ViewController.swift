@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet var playAgainButton: UIButton!
     @IBOutlet var endTurnButton: UIButton!
     @IBOutlet var textBubble: UIImageView!
+    @IBOutlet weak var textBubbleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
         personWints.isHidden=true
         playAgainButton.isHidden=true
         textBubble.isHidden=true
+        textBubbleLabel.isHidden=true
     }
 
     @IBAction func endTurn(_ sender: Any) {
@@ -136,6 +138,7 @@ class ViewController: UIViewController {
     }
     @IBAction func secretButton(_ sender: Any) {
         textBubble.isHidden=false
+        textBubbleLabel.isHidden=false
     }
 }
 

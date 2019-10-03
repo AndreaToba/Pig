@@ -125,10 +125,18 @@
                                     <action selector="secretButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="460-ln-UC1"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A3d-Gs-gn1">
-                                <rect key="frame" x="293" y="661" width="101" height="98"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="textBubble" translatesAutoresizingMaskIntoConstraints="NO" id="A3d-Gs-gn1">
+                                <rect key="frame" x="284" y="648" width="130" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I am Wint 😉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivJ-8G-cLu">
+                                <rect key="frame" x="301" y="673" width="99" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.59607843137254901" green="0.85882352941176465" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -143,6 +151,7 @@
                         <outlet property="score1" destination="2tB-lI-0TC" id="jR5-Yv-JPo"/>
                         <outlet property="score2" destination="nB8-37-CNf" id="Vvc-BN-FYh"/>
                         <outlet property="textBubble" destination="A3d-Gs-gn1" id="MDT-SK-j2n"/>
+                        <outlet property="textBubbleLabel" destination="ivJ-8G-cLu" id="0yS-sO-SfV"/>
                         <outlet property="turnScore" destination="a2G-cC-4Ww" id="rk3-ec-0aE"/>
                     </connections>
                 </viewController>
@@ -153,5 +162,6 @@
     </scenes>
     <resources>
         <image name="cutepig" width="225" height="225"/>
+        <image name="textBubble" width="2085" height="1638"/>
     </resources>
 </document>
