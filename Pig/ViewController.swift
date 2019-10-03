@@ -81,19 +81,20 @@ class ViewController: UIViewController {
         
         if (player1Score>=10){
             personWints.text="Player 1"
-             personWints.isHidden=false
+            personWints.isHidden=false
             playAgainButton.isHidden=false
+            dieImage.image = UIImage(named: "win")
         }
         else if(player2Score>=10){
             personWints.text="Player 2"
             personWints.isHidden=false
             playAgainButton.isHidden=false
-
+            dieImage.image = UIImage(named: "win")
         }
        
         
         
-         score1.text=("Player 1: \(player1Score)")
+        score1.text=("Player 1: \(player1Score)")
         score2.text=("Player 2: \(player2Score)")
         
         
@@ -104,16 +105,16 @@ class ViewController: UIViewController {
         player1Score = 0
         player2Score = 0
         playerTurnScore = 0
-       lostToOne=false
+        lostToOne=false
         personWints.isHidden=true
-       turnScore.text="Score: \(playerTurnScore)"
+        turnScore.text="Score: \(playerTurnScore)"
         score1.text="Player 1: \( player1Score)"
-          score2.text="Player 2: \( player2Score)"
-          playerTurnLabel.text="Player 1's Turn"
+        score2.text="Player 2: \( player2Score)"
+        playerTurnLabel.text="Player 1's Turn"
         personWints.isHidden=true
         playAgainButton.isHidden=true
-     
-        
+        dieImage.image = UIImage(named: "start")
+    
     }
 }
 
