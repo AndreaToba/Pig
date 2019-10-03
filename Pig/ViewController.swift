@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet var rollAgainButton: UIButton!
     @IBOutlet var playAgainButton: UIButton!
     @IBOutlet var endTurnButton: UIButton!
+    @IBOutlet var textBubble: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
          dieImage.image=UIImage(named: "start")
         personWints.isHidden=true
         playAgainButton.isHidden=true
+        textBubble.isHidden=true
     }
 
     @IBAction func endTurn(_ sender: Any) {
@@ -131,6 +133,9 @@ class ViewController: UIViewController {
 
         dieImage.image = UIImage(named: "start")
     
+    }
+    @IBAction func secretButton(_ sender: Any) {
+        textBubble.isHidden=false
     }
 }
 
