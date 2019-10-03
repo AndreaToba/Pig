@@ -124,9 +124,11 @@
                     </view>
                     <connections>
                         <outlet property="dieImage" destination="GJ9-Qz-CR3" id="iog-Ja-Qbj"/>
+                        <outlet property="endTurnButton" destination="2Bc-nk-flp" id="1gN-4V-uz8"/>
                         <outlet property="personWints" destination="VMP-ZM-Jgx" id="WUe-Ig-M1e"/>
                         <outlet property="playAgainButton" destination="Sj7-LI-wf2" id="LPM-b5-xbe"/>
                         <outlet property="playerTurnLabel" destination="WVc-Cs-4lE" id="FSf-Za-3Wk"/>
+                        <outlet property="rollAgainButton" destination="91c-Gw-nm2" id="Lo0-BY-4fW"/>
                         <outlet property="score1" destination="2tB-lI-0TC" id="jR5-Yv-JPo"/>
                         <outlet property="score2" destination="nB8-37-CNf" id="Vvc-BN-FYh"/>
                         <outlet property="turnScore" destination="a2G-cC-4Ww" id="rk3-ec-0aE"/>

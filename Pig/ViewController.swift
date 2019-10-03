@@ -22,7 +22,9 @@ class ViewController: UIViewController {
     var playerTurnScore: Int = 0
     var lostToOne: Bool=false
     
+    @IBOutlet var rollAgainButton: UIButton!
     @IBOutlet var playAgainButton: UIButton!
+    @IBOutlet var endTurnButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,12 +86,20 @@ class ViewController: UIViewController {
             personWints.isHidden=false
             playAgainButton.isHidden=false
             dieImage.image = UIImage(named: "win")
+            rollAgainButton.isHidden=true
+            endTurnButton.isHidden=true
+            turnScore.isHidden=true
+            playerTurnLabel.isHidden=true
         }
         else if(player2Score>=10){
             personWints.text="Player 2"
             personWints.isHidden=false
             playAgainButton.isHidden=false
             dieImage.image = UIImage(named: "win")
+            rollAgainButton.isHidden=true
+            endTurnButton.isHidden=true
+            turnScore.isHidden=true
+            playerTurnLabel.isHidden=true
         }
        
         
@@ -113,6 +123,12 @@ class ViewController: UIViewController {
         playerTurnLabel.text="Player 1's Turn"
         personWints.isHidden=true
         playAgainButton.isHidden=true
+        rollAgainButton.isHidden=false
+        endTurnButton.isHidden=false
+        turnScore.isHidden=false
+        playerTurnLabel.isHidden=false
+        
+
         dieImage.image = UIImage(named: "start")
     
     }
