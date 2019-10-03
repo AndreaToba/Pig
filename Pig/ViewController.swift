@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var personWints: UILabel!
     @IBOutlet weak var turnScore: UILabel!
     @IBOutlet weak var score1: UILabel!
     @IBOutlet weak var score2: UILabel!
@@ -21,11 +22,14 @@ class ViewController: UIViewController {
     var playerTurnScore: Int = 0
     var lostToOne: Bool=false
     
+    @IBOutlet var playAgainButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
          dieImage.image=UIImage(named: "start")
+        personWints.isHidden=true
+        playAgainButton.isHidden=true
     }
 
     @IBAction func endTurn(_ sender: Any) {
@@ -74,14 +78,43 @@ class ViewController: UIViewController {
          playerTurnScore = 0
         turnScore.text="Score: \(playerTurnScore)"
         player1Turn = !player1Turn
+        
+        if (player1Score>=10){
+            personWints.text="Player 1"
+             personWints.isHidden=false
+            playAgainButton.isHidden=false
+        }
+        else if(player2Score>=10){
+            personWints.text="Player 2"
+            personWints.isHidden=false
+            playAgainButton.isHidden=false
+
+        }
        
         
         
          score1.text=("Player 1: \(player1Score)")
         score2.text=("Player 2: \(player2Score)")
         
+        
     }
     
+    @IBAction func playAgainPressed(_ sender: Any) {
+        player1Turn = true
+        player1Score = 0
+        player2Score = 0
+        playerTurnScore = 0
+       lostToOne=false
+        personWints.isHidden=true
+       turnScore.text="Score: \(playerTurnScore)"
+        score1.text="Player 1: \( player1Score)"
+          score2.text="Player 2: \( player2Score)"
+          playerTurnLabel.text="Player 1's Turn"
+        personWints.isHidden=true
+        playAgainButton.isHidden=true
+     
+        
+    }
 }
 
 
