@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var player1Score: Int = 0
     var player2Score: Int = 0
     var playerTurnScore: Int = 0
-    var lostToOne: Bool=false
+    var lostToOne: Bool=false // used for start img
     
     @IBOutlet var rollAgainButton: UIButton!
     @IBOutlet var playAgainButton: UIButton!
@@ -28,22 +28,24 @@ class ViewController: UIViewController {
     @IBOutlet var textBubble: UIImageView!
     @IBOutlet weak var textBubbleLabel: UILabel!
     
+    // sets to 0 and new game
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-         dieImage.image=UIImage(named: "start")
+        dieImage.image=UIImage(named: "start")
         personWints.isHidden=true
         playAgainButton.isHidden=true
         textBubble.isHidden=true
         textBubbleLabel.isHidden=true
     }
 
+    // starts new round
     @IBAction func endTurn(_ sender: Any) {
         turnToTotal()
     }
     
+    // changes dice img and score labels
     @IBAction func roll(_ sender: Any) {
-     //   UIImage.rotate(180)
         let randomInt = Int.random(in: 1..<6)
         print(randomInt)
         if(randomInt>0){
@@ -64,10 +66,10 @@ class ViewController: UIViewController {
         
      }
     
+    // updates variables
     func turnToTotal(){
         if (player1Turn){
             player1Score += playerTurnScore
-           
             playerTurnLabel.text="Player 2's Turn"
         }
         else{
@@ -75,17 +77,19 @@ class ViewController: UIViewController {
             playerTurnLabel.text="Player 1's Turn"
         }
         
+        // clears img
         if(lostToOne){
             dieImage.image=UIImage(named: "face1")}
         else{
             dieImage.image=UIImage(named: "start")
         }
         
-         playerTurnScore = 0
+        playerTurnScore = 0
         turnScore.text="Score: \(playerTurnScore)"
         player1Turn = !player1Turn
         
-        if (player1Score>=10){
+        // winner conditions
+        if (player1Score >= 10){
             personWints.text="Player 1"
             personWints.isHidden=false
             playAgainButton.isHidden=false
@@ -95,7 +99,7 @@ class ViewController: UIViewController {
             turnScore.isHidden=true
             playerTurnLabel.isHidden=true
         }
-        else if(player2Score>=10){
+        else if(player2Score >= 10){
             personWints.text="Player 2"
             personWints.isHidden=false
             playAgainButton.isHidden=false
@@ -114,7 +118,9 @@ class ViewController: UIViewController {
         
     }
     
+    // 
     @IBAction func playAgainPressed(_ sender: Any) {
+        // reset all
         player1Turn = true
         player1Score = 0
         player2Score = 0
@@ -134,35 +140,12 @@ class ViewController: UIViewController {
         
 
         dieImage.image = UIImage(named: "start")
-    
     }
+    
     @IBAction func secretButton(_ sender: Any) {
         textBubble.isHidden=false
         textBubbleLabel.isHidden=false
     }
 }
 
-
-/*extension UIImage {
-    func rotate(radians: CGFloat) -> UIImage {
-        let rotatedSize = CGRect(origin: .zero, size: size)
-            .applying(CGAffineTransform(rotationAngle: CGFloat(radians)))
-            .integral.size
-        UIGraphicsBeginImageContext(rotatedSize)
-        if let context = UIGraphicsGetCurrentContext() {
-            let origin = CGPoint(x: rotatedSize.width / 2.0,
-                                 y: rotatedSize.height / 2.0)
-            context.translateBy(x: origin.x, y: origin.y)
-            context.rotate(by: radians)
-            draw(in: CGRect(x: -origin.y, y: -origin.x,
-                            width: size.width, height: size.height))
-            let rotatedImage = UIGraphicsGetImageFromCurrentImageContext()
-            UIGraphicsEndImageContext()
-            
-            return rotatedImage ?? self
-        }
-        
-        return self
-    }
- }*/
 
